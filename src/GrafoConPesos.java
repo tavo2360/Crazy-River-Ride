@@ -43,27 +43,29 @@
     }
 
     public static void main (String args[]) {
-       final GrafoConPesos t = new GrafoConPesos (6);
-       t.setNombreDelNodo(0, "v0");
-       t.setNombreDelNodo(1, "v1");
-       t.setNombreDelNodo(2, "v2");
-       t.setNombreDelNodo(3, "v3");
-       t.setNombreDelNodo(4, "v4");
-       t.setNombreDelNodo(5, "v5");
-       t.addRecorrido (0,1,2);
-       t.addRecorrido (0,5,9);
-       t.addRecorrido (1,2,8);
-       t.addRecorrido (1,3,15);
-       t.addRecorrido (1,5,6);
-       t.addRecorrido (2,3,1);
-       t.addRecorrido (4,3,3);
-       t.addRecorrido (4,2,7);
-       t.addRecorrido (5,4,3);
-       t.print();
+       final GrafoConPesos GrafoDeCiudades = new GrafoConPesos (5);
+       GrafoDeCiudades.setNombreDelNodo(0, "Nivel 1");
+       GrafoDeCiudades.setNombreDelNodo(1, "Nivel 2");
+       GrafoDeCiudades.setNombreDelNodo(2, "Nivel 3");
+       GrafoDeCiudades.setNombreDelNodo(3, "Nivel 4");
+       GrafoDeCiudades.setNombreDelNodo(4, "Nivel 5");
+       
+       GrafoDeCiudades.addRecorrido (0,3,2);
+       GrafoDeCiudades.addRecorrido (0,4,9);
+       GrafoDeCiudades.addRecorrido (1,0,8);
+       GrafoDeCiudades.addRecorrido (1,2,15);
+       GrafoDeCiudades.addRecorrido (1,3,6);
+       GrafoDeCiudades.addRecorrido (2,4,1);
+       GrafoDeCiudades.addRecorrido (3,4,3);
+       GrafoDeCiudades.addRecorrido (3,1,7);
+       GrafoDeCiudades.addRecorrido (3,2,3);
+       GrafoDeCiudades.addRecorrido (4,1,7);
+       GrafoDeCiudades.addRecorrido (4,3,3);
+       GrafoDeCiudades.print();
  
-       final int [] pred = Dijkstra.dijkstra (t, 0);
-       for (int n=0; n<6; n++) {
-          Dijkstra.printPath (t, pred, 0, n);
+       final int [] pred = Dijkstra.dijkstra (GrafoDeCiudades, 0);
+       for (int n=0; n<5; n++) {
+          Dijkstra.printPath (GrafoDeCiudades, pred, 0, n);
        }
     }
  
