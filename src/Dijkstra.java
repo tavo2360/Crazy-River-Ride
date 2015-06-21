@@ -45,6 +45,7 @@
         while (x!=s) {
            path.add (0, G.getNombreDelNodo(x));
            x = CiudadAnterior[x];
+           
         }
         path.add (0, G.getNombreDelNodo(s));
         System.out.println (path);
