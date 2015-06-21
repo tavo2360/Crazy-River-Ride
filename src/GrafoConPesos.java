@@ -14,10 +14,14 @@
     public void   setNombreDelNodo (int vertex, Object NombreDelNodo) { NumeroONombreDeLasCiudades[vertex]=NombreDelNodo; }
     public Object getNombreDelNodo (int vertex)               { return NumeroONombreDeLasCiudades[vertex]; }
  
-    public void    addRecorrido    (int LugarDeSalida, int LugarDeLLegada, int w)  { RecorridoACiudad[LugarDeSalida][LugarDeLLegada] = w; }
-    public boolean isRecorrido     (int LugarDeSalida, int LugarDeLLegada)  { return RecorridoACiudad[LugarDeSalida][LugarDeLLegada]>0; }
-    public void    removeRecorrido (int LugarDeSalida, int LugarDeLLegada)  { RecorridoACiudad[LugarDeSalida][LugarDeLLegada] = 0; }
-    public int     getCosto  (int LugarDeSalida, int LugarDeLLegada)  { return RecorridoACiudad[LugarDeSalida][LugarDeLLegada]; }
+    public void    addRecorrido (int LugarDeSalida, int LugarDeLLegada, int w)  
+    { RecorridoACiudad[LugarDeSalida][LugarDeLLegada] = w; }
+    public boolean isRecorrido (int LugarDeSalida, int LugarDeLLegada)  
+    { return RecorridoACiudad[LugarDeSalida][LugarDeLLegada]>0; }
+    public void    removeRecorrido (int LugarDeSalida, int LugarDeLLegada)  
+    { RecorridoACiudad[LugarDeSalida][LugarDeLLegada] = 0; }
+    public int     getCosto (int LugarDeSalida, int LugarDeLLegada)  
+    { return RecorridoACiudad[LugarDeSalida][LugarDeLLegada]; }
  
     public int [] CiudadesVecinas (int vertex) {
        int count = 0;
